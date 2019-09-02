@@ -5,6 +5,7 @@ A content focused responsive theme for [Ghost](https://github.com/tryghost/ghost
 This is a customized Attila Ghost theme, based on the original Attila Ghost theme by Peter Amende which can be found at https://github.com/zutrinken/attila.git.
 
 Demo for the original Attila: [attila.zutrinken.com](https://attila.zutrinken.com/)
+
 Demo for the customized Attila: [debbabi-nader.github.io](https://debbabi-nader.github.io/my-blog/)
 
 ## Features
