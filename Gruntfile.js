@@ -11,12 +11,9 @@ module.exports = function (grunt) {
         pkg: grunt.file.readJSON('package.json'),
     
         config: {
-            'cssSrcDir': 'src/sass',
-            'cssTargetDir': 'assets/css',
-            'jsSrcDir': 'src/js',
-            'jsTargetDir': 'assets/js',
-            'fontSrcDir': 'src/font',
-            'fontTargetDir': 'assets/font',
+            'stylesDir': 'assets/styles',
+            'scriptsDir': 'assets/scripts',
+            'fontsDir': 'assets/fonts',
             'distDir': `dist/${require('./package.json').name}`,
             'zipDir': 'dist'
         },
@@ -29,7 +26,7 @@ module.exports = function (grunt) {
                     outputStyle: 'compressed'
                 },
                 files: {
-                    '<%=  config.distDir %>/<%=  config.cssTargetDir %>/style.css': '<%=  config.cssSrcDir %>/style.scss'
+                    '<%=  config.distDir %>/<%=  config.stylesDir %>/main.css': '<%=  config.stylesDir %>/main.scss'
                 }
             }
         },
@@ -43,13 +40,13 @@ module.exports = function (grunt) {
                 ]
             },
             dist: {
-                src: '<%=  config.distDir %>/<%=  config.cssTargetDir %>/*.css'
+                src: '<%=  config.distDir %>/<%=  config.stylesDir %>/*.css'
             }
         },
         uglify: {
             js: {
                 files: {
-                    '<%=  config.distDir %>/<%=  config.jsTargetDir %>/script.js': ['<%=  config.jsSrcDir %>/libs/jquery-*.js', '<%=  config.jsSrcDir %>/**/*.js']
+                    '<%=  config.distDir %>/<%=  config.scriptsDir %>/main.js': ['<%=  config.scriptsDir %>/vendors/jquery-*.js', '<%=  config.scriptsDir %>/**/*.js']
                 }
             }
         },
@@ -57,9 +54,9 @@ module.exports = function (grunt) {
             dist: {
                 files: [
                     {
-                        dest: '<%=  config.distDir %>/<%=  config.fontTargetDir %>/',
+                        dest: '<%=  config.distDir %>/<%=  config.fontsDir %>/',
                         src: '*',
-                        cwd: '<%=  config.fontSrcDir %>',
+                        cwd: '<%=  config.fontsDir %>',
                         expand: true
                     },
                     {
@@ -72,7 +69,7 @@ module.exports = function (grunt) {
         },
         watch: {
             all: {
-                files: ['package.json', 'LICENSE', '*.hbs', 'locales/**', 'partials/**', '<%=  config.fontSrcDir %>/**', '<%=  config.cssSrcDir %>/**/*.scss', '<%=  config.jsSrcDir %>/**/*.js'],
+                files: ['package.json', 'LICENSE', '*.hbs', 'locales/**', 'partials/**', '<%=  config.fontsDir %>/**', '<%=  config.stylesDir %>/**/*.scss', '<%=  config.scriptsDir %>/**/*.js'],
                 tasks: ['sass', 'postcss', 'uglify', 'copy']
             }
         },
