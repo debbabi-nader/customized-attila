@@ -2,7 +2,10 @@
 
 A content focused responsive theme for [Ghost](https://github.com/tryghost/ghost/).
 
-Demo: [attila.zutrinken.com](https://attila.zutrinken.com/)
+This is a customized Attila Ghost theme, based on the original Attila Ghost theme by Peter Amende which can be found at https://github.com/zutrinken/attila.git.
+
+Demo for the original Attila: [attila.zutrinken.com](https://attila.zutrinken.com/)
+Demo for the customized Attila: [debbabi-nader.github.io](https://debbabi-nader.github.io/my-blog/)
 
 ## Features
 
@@ -34,7 +37,7 @@ Install [Grunt](https://gruntjs.com/getting-started/):
 
 	npm install -g grunt-cli
 
-Install Grunt dependencies:
+Install theme dependencies:
 
 	npm install
 
@@ -42,7 +45,7 @@ Build Grunt project:
 
 	grunt build
 
-The zip Grunt task packages the theme files into `dist/<theme-name>.zip`, which you can then upload to your site.
+The zip Grunt task packages the theme files into `dist/customized-attila.zip`, which you can then upload to your site:
 
 	grunt zip
 

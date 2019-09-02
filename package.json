@@ -1,7 +1,7 @@
 {
     "name": "customized-attila",
-    "description": "Customized Attila Ghost theme",
-    "demo": "https://attila.zutrinken.com",
+    "description": "Customized Attila Ghost theme, based on the original Attila Ghost theme by Peter Amende which can be found at https://github.com/zutrinken/attila.git.",
+    "demo": "https://debbabi-nader.github.io/my-blog/",
     "version": "1.14.0",
     "engines": {
         "ghost": ">=2.1.0",
@@ -9,9 +9,9 @@
     },
     "license": "MIT",
     "author": {
-        "name": "Peter Amende",
-        "email": "xoxo@zutrinken.com",
-        "url": "https://zutrinken.com"
+        "name": "Nader Debbabi",
+        "email": "nader.debbabi.30@gmail.com",
+        "url": "https://debbabi-nader.github.io/my-blog/"
     },
     "gpm": {
         "type": "theme",
@@ -23,11 +23,13 @@
     "keywords": [
         "ghost-theme",
         "ghost",
-        "theme"
+        "blog",
+        "theme",
+        "attila"
     ],
     "repository": {
         "type": "git",
-        "url": "https://github.com/zutrinken/attila.git"
+        "url": "https://github.com/debbabi-nader/customized-attila.git"
     },
     "devDependencies": {
         "autoprefixer": "^9.1.5",
