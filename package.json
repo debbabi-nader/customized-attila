@@ -8,10 +8,6 @@
         "ghost-api": "v2"
     },
     "license": "MIT",
-    "screenshots": {
-        "desktop": "src/screenshot-desktop.jpg",
-        "mobile": "src/screenshot-mobile.jpg"
-    },
     "author": {
         "name": "Peter Amende",
         "email": "xoxo@zutrinken.com",
