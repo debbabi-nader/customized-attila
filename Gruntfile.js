@@ -20,23 +20,6 @@ module.exports = function (grunt) {
             'distDir': `dist/${require('./package.json').name}`,
             'zipDir': 'dist'
         },
-        copy: {
-            dist: {
-                files: [
-                    {
-                        dest: '<%=  config.distDir %>/<%=  config.fontTargetDir %>/',
-                        src: '*',
-                        cwd: '<%=  config.fontSrcDir %>',
-                        expand: true
-                    },
-                    {
-                        dest: '<%=  config.distDir %>/',
-                        src: ['package.json', 'LICENSE', '*.hbs', 'locales/**', 'partials/**'],
-                        expand: true
-                    }
-                ]
-            }
-        },
         clean: {
             dist: ['dist']
         },
@@ -70,6 +53,23 @@ module.exports = function (grunt) {
                 }
             }
         },
+        copy: {
+            dist: {
+                files: [
+                    {
+                        dest: '<%=  config.distDir %>/<%=  config.fontTargetDir %>/',
+                        src: '*',
+                        cwd: '<%=  config.fontSrcDir %>',
+                        expand: true
+                    },
+                    {
+                        dest: '<%=  config.distDir %>/',
+                        src: ['package.json', 'LICENSE', '*.hbs', 'locales/**', 'partials/**'],
+                        expand: true
+                    }
+                ]
+            }
+        },
         watch: {
             all: {
                 files: ['package.json', 'LICENSE', '*.hbs', 'locales/**', 'partials/**', '<%=  config.fontSrcDir %>/**', '<%=  config.cssSrcDir %>/**/*.scss', '<%=  config.jsSrcDir %>/**/*.js'],
@@ -78,6 +78,7 @@ module.exports = function (grunt) {
         },
         zip: {
             dist: {
+                cwd: '<%=  config.distDir %>',
                 src: '<%=  config.distDir %>/**',
                 dest: `<%=  config.zipDir %>/${require('./package.json').name}.zip`
             }
