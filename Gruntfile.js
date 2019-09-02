@@ -1,119 +1,109 @@
-module.exports = function(grunt) {
-  'use strict';
-  require('load-grunt-tasks')(grunt, {
-    pattern: ['grunt-*']
-  });
+module.exports = function (grunt) {
 
-  grunt.initConfig({
-    pkg: grunt.file.readJSON('package.json'),
-    config: {
-      'cssSrcDir': 'src/sass',
-      'cssTargetDir': 'css',
-      'jsSrcDir': 'src/js',
-      'jsTargetDir': 'js'
-    },
-    copy: {
-      dev: {
-        files: [{
-          dest: 'assets/font/',
-          src: '*',
-          cwd: 'src/font/',
-          expand: true
-        }]
-      },
-      dist: {
-        files: [{
-          dest: 'assets/font/',
-          src: '*',
-          cwd: 'src/font/',
-          expand: true
-        }]
-      }
-    },
-    clean: {
-      dev: ['dev'],
-      dist: ['dist'],
-      all: ['dev', 'dist']
-    },
-    sass: {
-      dev: {
-        options: {
-          includePaths: ['<%= config.cssSrcDir %>'],
-          sourceMaps: true
-        },
-        files: {
-          'assets/<%=  config.cssTargetDir %>/style.css': '<%=  config.cssSrcDir %>/style.scss'
-        }
-      },
-      dist: {
-        options: {
-          outputStyle: 'compressed'
-        },
-        files: {
-          'assets/<%=  config.cssTargetDir %>/style.css': '<%=  config.cssSrcDir %>/style.scss'
-        }
-      }
-    },
-    postcss: {
-      options: {
-        map: true,
-        processors: [
-          require('autoprefixer')({
-            browsers: ['last 2 versions']
-          })
-        ]
-      },
-      dev: {
-        src: 'assets/<%=  config.cssTargetDir %>/*.css'
-      },
-      dist: {
-        src: 'assets/<%=  config.cssTargetDir %>/*.css'
-      }
-    },
-    uglify: {
-      js: {
-        files: {
-          'assets/<%=  config.jsTargetDir %>/script.js': ['<%=  config.jsSrcDir %>/libs/jquery-*.js', '<%=  config.jsSrcDir %>/**/*.js']
-        }
-      }
-    },
-    watch: {
-      css: {
-        files: '<%=  config.cssSrcDir %>/**/*.scss',
-        tasks: ['sass:dev', 'copy:dev', 'postcss:dev']
-      }
-    },
-    zip: {
-      dist: {
-        src: [
-          '**',
-          '!node_modules',
-          '!node_modules/**',
-          '!src',
-          '!src/**',
-          '!dist',
-          '!dist/**',
-          '!.git',
-          '!.gitignore',
-          '!Gruntfile.js',
-          '!package-lock.json'
-        ],
-        dest: `dist/${require('./package.json').name}.zip`
-      }
-    }
-  });
+    'use strict';
+    
+    require('load-grunt-tasks')(grunt, {
+        pattern: ['grunt-*']
+    });
 
-  grunt.registerTask('build', [
-    'sass:dist',
-    'postcss:dist',
-    'copy:dist',
-    'uglify'
-  ]);
-  grunt.registerTask('default', [
-    'sass:dev',
-    'postcss:dev',
-    'copy:dev',
-    'uglify',
-    'watch'
-  ]);
+    grunt.initConfig({
+    
+        pkg: grunt.file.readJSON('package.json'),
+    
+        config: {
+            'cssSrcDir': 'src/sass',
+            'cssTargetDir': 'assets/css',
+            'jsSrcDir': 'src/js',
+            'jsTargetDir': 'assets/js',
+            'fontSrcDir': 'src/font',
+            'fontTargetDir': 'assets/font',
+            'distDir': `dist/${require('./package.json').name}`,
+            'zipDir': 'dist'
+        },
+        copy: {
+            dist: {
+                files: [
+                    {
+                        dest: '<%=  config.distDir %>/<%=  config.fontTargetDir %>/',
+                        src: '*',
+                        cwd: '<%=  config.fontSrcDir %>',
+                        expand: true
+                    },
+                    {
+                        dest: '<%=  config.distDir %>/',
+                        src: ['package.json', 'LICENSE', '*.hbs', 'locales/**', 'partials/**'],
+                        expand: true
+                    }
+                ]
+            }
+        },
+        clean: {
+            dist: ['dist']
+        },
+        sass: {
+            dist: {
+                options: {
+                    outputStyle: 'compressed'
+                },
+                files: {
+                    '<%=  config.distDir %>/<%=  config.cssTargetDir %>/style.css': '<%=  config.cssSrcDir %>/style.scss'
+                }
+            }
+        },
+        postcss: {
+            options: {
+                map: true,
+                processors: [
+                    require('autoprefixer')({
+                        browsers: ['last 2 versions']
+                    })
+                ]
+            },
+            dist: {
+                src: '<%=  config.distDir %>/<%=  config.cssTargetDir %>/*.css'
+            }
+        },
+        uglify: {
+            js: {
+                files: {
+                    '<%=  config.distDir %>/<%=  config.jsTargetDir %>/script.js': ['<%=  config.jsSrcDir %>/libs/jquery-*.js', '<%=  config.jsSrcDir %>/**/*.js']
+                }
+            }
+        },
+        watch: {
+            all: {
+                files: ['package.json', 'LICENSE', '*.hbs', 'locales/**', 'partials/**', '<%=  config.fontSrcDir %>/**', '<%=  config.cssSrcDir %>/**/*.scss', '<%=  config.jsSrcDir %>/**/*.js'],
+                tasks: ['sass', 'postcss', 'uglify', 'copy']
+            }
+        },
+        zip: {
+            dist: {
+                src: '<%=  config.distDir %>/**',
+                dest: `<%=  config.zipDir %>/${require('./package.json').name}.zip`
+            }
+        }
+
+    });
+
+    grunt.registerTask('build', [
+    
+        'clean',
+        'sass',
+        'postcss',
+        'uglify',
+        'copy'
+    
+    ]);
+
+    grunt.registerTask('default', [
+    
+        'clean',
+        'sass',
+        'postcss',
+        'uglify',
+        'copy',
+        'watch'
+    
+    ]);
+
 };
