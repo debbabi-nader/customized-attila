@@ -6,7 +6,7 @@ This is a customized Attila Ghost theme, based on the original Attila Ghost them
 
 Demo for the original Attila: [attila.zutrinken.com](https://attila.zutrinken.com/)
 
-Demo for the customized Attila: [debbabi-nader.github.io](https://debbabi-nader.github.io/my-blog/)
+Demo for the customized Attila: [debbabi-nader.github.io](https://debbabi-nader.github.io)
 
 ## Features
 
@@ -19,14 +19,6 @@ Demo for the customized Attila: [debbabi-nader.github.io](https://debbabi-nader.
 ## Localization
 
 * __English__
-* __German__
-* __Spanish__
-* __French__ by [robink](https://github.com/robink)
-* __Italian__ by [fmaida](https://github.com/fmaida)
-* __Norwegian__ by [arthurnoerve](https://github.com/arthurnoerve)
-* __Chinese__ by [hao-lee](https://github.com/hao-lee)
-* __Indonesian__ by [simplyeazy](https://github.com/simplyeazy)
-* __Romanian__ by [cdorin93](https://github.com/cdorin93)
 
 ## Setup
 
@@ -46,9 +38,9 @@ Build Grunt project:
 
 	grunt build
 
-The zip Grunt task packages the theme files into `dist/customized-attila.zip`, which you can then upload to your site:
+The package Grunt task packages the theme files into `dist/customized-attila.zip`, which you can then upload to your site:
 
-	grunt zip
+	grunt package
 
 ## Copyright & License
 
