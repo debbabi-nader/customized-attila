@@ -93,13 +93,16 @@ module.exports = function (grunt) {
     
     ]);
 
+    grunt.registerTask('package', [
+    
+        'build',
+        'zip'
+    
+    ]);
+
     grunt.registerTask('default', [
     
-        'clean',
-        'sass',
-        'postcss',
-        'uglify',
-        'copy',
+        'build',
         'watch'
     
     ]);
