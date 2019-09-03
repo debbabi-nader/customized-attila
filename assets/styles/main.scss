@@ -1648,6 +1648,9 @@ img {
 
 
 @media only screen and (max-width: 480px) {
+	#footer {
+		padding-bottom: 0;
+	}
 	.copyright,
 	.credits {
 		float: none;
