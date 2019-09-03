@@ -878,7 +878,7 @@ img {
 	line-height: 1em;
 	padding-bottom: 6em;
 }
-.credits {
+.footer-content {
 	text-align: center;
 	font-size: 0.625em;
 	line-height: 1em;
@@ -886,16 +886,17 @@ img {
 	overflow: auto;
 	opacity: 0.5;
 }
-.credits a {
+.footer-content a {
 	color: inherit;
+	font-weight: bold;
 }
-.credits span {
+.footer-content span {
 	display: block;
 }
-.credits-theme {
+.copyright {
 	float: left;
 }
-.credits-software {
+.credits {
 	float: right;
 }
 
@@ -1635,6 +1636,13 @@ img {
 
 
 @media only screen and (max-width: 480px) {
+	.copyright,
+	.credits {
+		float: none;
+	}
+	.copyright {
+		margin-bottom: 0.625em;
+	}
 	.inner {
 		padding: 0 16px;
 	}
