@@ -1334,14 +1334,10 @@ img {
 	position: relative;
 	padding: 2em 0;
 	text-align: center;
-	border-bottom: 1px solid $color-gray-90;
 	box-sizing: border-box;
 }
 .post-comments.activated {
-	margin: -1px 0 0;
 	padding: 1em;
-	background: $color-gray-98;
-	border: 1px solid $color-gray-90;
 }
 .post-comments-activate {
 	display: inline-block;
