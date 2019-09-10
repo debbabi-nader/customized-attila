@@ -1,91 +1,61 @@
 {{!< default}}
 
 {{#author}}
-<header id="author-header"{{#if cover_image}} class="has-cover"{{else}}{{#if @site.cover_image}} class="has-cover"{{/if}}{{/if}}>
-	<div class="inner">
-		<nav id="navigation">
-			{{#if @site.logo}}
-			<span class="blog-logo">
-				<a href="{{@site.url}}"><img src="{{@site.logo}}" alt="{{t "Blog Logo"}}" /></a>
-			</span>
-			{{else}}
-			<span id="home-button" class="nav-button">
-				<a class="home-button" href="{{@site.url}}" title="{{t "Home"}}"><i class="ic ic-arrow-left"></i> {{t "Home"}}</a>
-			</span>
-			{{/if}}
-			{{#if @site.navigation}}
-			<span id="menu-button" class="nav-button">
-				<a class="menu-button"><i class="ic ic-menu"></i> {{t "Menu"}}</a>
-			</span>
-			{{/if}}
-		</nav>
-		{{#if cover_image}}
-		<div class="blog-cover cover">
-			<img
+<header id="author-header" class="animate-fade-in{{#if cover_image}} has-cover{{else}}{{#if @site.cover_image}} has-cover{{/if}}{{/if}}">
+
+	<div id="author-header-content-container">
+		{{#if profile_image}}
+		<figure id="author-avatar" class="animate-fade-down">
+			<img src="{{profile_image}}" alt="{{name}}" />
+		</figure>
+		{{/if}}
+		<h1 class="author-greeting animate-fade-up">{{t "Hello and welcome to my blog!"}}</h1>
+	</div>
+
+	{{#if cover_image}}
+	<div class="cover">
+		<img
 			srcset="{{img_url cover_image size="s"}} 320w,
-              {{img_url cover_image size="m"}} 640w,
-              {{img_url cover_image size="l"}} 960w,
-              {{img_url cover_image size="xl"}} 1920w"
-      src="{{img_url cover_image size="xl"}}"
-			alt="{{@site.title}}" />
-		</div>
-		{{else}}
-		{{#if @site.cover_image}}
-		<div class="blog-cover cover">
-			<img
+            	{{img_url cover_image size="m"}} 640w,
+            	{{img_url cover_image size="l"}} 960w,
+            	{{img_url cover_image size="xl"}} 1920w"
+      		src="{{img_url cover_image size="xl"}}"
+			alt="{{@site.title}}"
+		/>
+	</div>
+	{{else}}
+	{{#if @site.cover_image}}
+	<div class="cover">
+		<img
 			srcset="{{img_url @site.cover_image size="s"}} 320w,
-              {{img_url @site.cover_image size="m"}} 640w,
-              {{img_url @site.cover_image size="l"}} 960w,
-              {{img_url @site.cover_image size="xl"}} 1920w"
-      src="{{img_url @site.cover_image size="xl"}}"
-			alt="{{@site.title}}" />
-		</div>
-		{{/if}}
-		{{/if}}
+            	{{img_url @site.cover_image size="m"}} 640w,
+            	{{img_url @site.cover_image size="l"}} 960w,
+            	{{img_url @site.cover_image size="xl"}} 1920w"
+      		src="{{img_url @site.cover_image size="xl"}}"
+			alt="{{@site.title}}"
+		/>
 	</div>
+	{{/if}}
+	{{/if}}
+
+	<a id="scroll-cue" href="#index"><i class="ic-arrow-down"></i></a>
+
 </header>
-
-<section id="blog-author"{{#if cover_image}} class="has-cover"{{else}}{{#if @site.cover_image}} class="has-cover"{{/if}}{{/if}}>
-	<div class="inner">
-
-		<aside class="post-author">
-			<figure class="post-author-avatar avatar">
-				{{#if profile_image}}
-					<img src="{{profile_image}}" alt="{{name}}" />
-				{{/if}}
-			</figure>
-			<div class="post-author-bio">
-				<h2 class="post-author-name">{{name}}</h2>
-				{{#if bio}}
-					<p class="post-author-about">{{{bio}}}</p>
-				{{/if}}
-				<span class="post-author-stats"><i class="ic ic-pencil"></i> {{plural ../pagination.total empty=(t "No Posts") singular=(t "% Post") plural=(t "% Posts")}}</span>
-				{{#if location}}
-					<span class="post-author-location"><i class="ic ic-location"></i> {{location}}</span>
-				{{/if}}
-				{{#if website}}
-					<span class="post-author-website"><i class="ic ic-link"></i> <a href="{{website}}">{{t "Website"}}</a></span>
-				{{/if}}
-				{{#if twitter}}
-					<span class="post-author-twitter"><i class="ic ic-twitter"></i> <a target="_blank" href="{{twitter_url}}">Twitter</a></span>
-				{{/if}}
-				{{#if facebook}}
-					<span class="post-author-facebook"><i class="ic ic-facebook"></i> <a target="_blank" href="{{facebook_url}}">Facebook</a></span>
-				{{/if}}
-			</div>
-			<div class="clear"></div>
-		</aside>
-	</div>
-</section>
-
-{{/author}}
 
 <div id="index" class="container">
 
 	<main class="content" role="main">
-
-		{{> "loop"}}
-
+	
+		<div class="inner">
+			Labore laboris aliqua mollit velit dolor do adipisicing aute veniam amet ut laboris eu ex. In duis consequat magna eu commodo veniam sunt. Esse consequat nisi nisi mollit sit irure labore cillum elit officia ea do et. Deserunt nostrud nisi laborum non ut labore tempor sit ipsum eu aliquip consequat tempor. Nostrud irure minim duis enim adipisicing.
+			Lorem enim do ut aute Lorem deserunt do deserunt non aliqua. Veniam sit ex minim eiusmod adipisicing duis adipisicing laboris. Amet Lorem minim veniam irure. Exercitation cillum ex consequat sit sint elit commodo nulla laborum ipsum velit officia ad. In est occaecat duis do occaecat voluptate amet deserunt enim ad irure. Incididunt esse qui do laborum adipisicing consectetur aliquip incididunt proident ad. Sunt sint proident ex sit sunt non.
+			Ullamco occaecat nostrud aliqua eu sunt id. Non est deserunt sunt officia nisi nulla nisi velit commodo exercitation aute Lorem. Exercitation in veniam enim non est fugiat amet non et non qui. Sint voluptate eiusmod eu Lorem. Voluptate reprehenderit amet ut id. Sit consequat excepteur cillum officia aliquip nostrud ut duis eu aliquip voluptate Lorem consectetur enim.
+			Incididunt adipisicing magna reprehenderit sunt excepteur velit ullamco ad cillum ad eiusmod est. Laboris adipisicing in exercitation nostrud duis sint fugiat aliqua tempor exercitation mollit amet. Nostrud laboris ex exercitation fugiat reprehenderit id eiusmod id est officia et deserunt. Tempor veniam nostrud proident enim dolor non minim nulla non magna. Irure cillum sunt aute esse amet incididunt enim Lorem labore cillum occaecat nisi cillum nisi. Tempor enim magna exercitation mollit laboris dolore commodo. Lorem anim labore reprehenderit ullamco sint nulla veniam magna reprehenderit voluptate.
+			Adipisicing reprehenderit ad nostrud reprehenderit tempor aliquip sunt elit aliqua. Aliquip dolore quis ex nulla exercitation velit dolore do magna cupidatat aliquip non ullamco labore. Cillum culpa non occaecat anim ea mollit. Lorem pariatur non nostrud dolore aliquip esse proident consequat aliqua cillum. Fugiat minim labore exercitation ea quis dolore. Ea officia est eu aliqua labore anim ullamco.
+			Occaecat tempor adipisicing voluptate cillum nulla qui. Ex dolore voluptate aute ipsum commodo dolore anim sunt laborum anim reprehenderit dolore reprehenderit. Proident voluptate velit labore qui aliqua aliquip exercitation minim anim. Pariatur quis esse qui incididunt nostrud consequat aute amet veniam amet occaecat est dolor.
+		</div>
+	
 	</main>
 
 </div>
+{{/author}}

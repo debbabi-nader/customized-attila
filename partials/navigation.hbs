@@ -1,22 +1,16 @@
 <nav id="menu">
-	<a class="close-button">{{t "Close"}}</a>
-	<div class="nav-wrapper">
-		<p class="nav-label">{{t "Menu"}}</p>
+	<div class="menu-content">
 		<ul>
 			{{#foreach navigation}}
 			<li class="nav-{{slug}}{{#if current}} active{{/if}}" role="presentation"><a href="{{url absolute="true"}}">{{label}}</a></li>
 			{{/foreach}}
-			{{#if @site.twitter}}
-			<li class="nav-twitter"><a href="{{twitter_url}}" title="{{@site.twitter}}"><i class="ic ic-twitter"></i> Twitter</a></li>
-			{{/if}}
-			{{#if @site.facebook}}
-			<li class="nav-facebook"><a href="{{facebook_url}}" title="{{@site.facebook}}"><i class="ic ic-facebook"></i> Facebook</a></li>
-			{{/if}}
-			{{#if @labs.subscribers}}
-			<li class="nav-subscribe"><a href="{{@site.url}}/subscribe/"><i class="ic ic-mail"></i> {{t "Subscribe"}}</a></li>
-			{{else}}
-			<li class="nav-rss"><a href="{{@site.url}}/rss/"><i class="ic ic-rss"></i> {{t "Subscribe"}}</a></li>
-			{{/if}}
+		</ul>
+	</div>
+	<div class="menu-footer">
+		<ul>
+			<li><a href="https://www.linkedin.com/in/debbabi-nader/" target="_blank" title="Linkedin"><i class="ic ic-linkedin"></i></a></li>
+			<li><a href="https://github.com/debbabi-nader/" target="_blank" title="GitHub"><i class="ic ic-github"></i></a></li>
+			<li><a href="javascript:void(0)" title="Email address"><i class="ic ic-mail"></i></a></li>
 		</ul>
 	</div>
 </nav>
