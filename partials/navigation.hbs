@@ -2,15 +2,15 @@
 	<div class="menu-content">
 		<ul>
 			{{#foreach navigation}}
-			<li class="nav-{{slug}}{{#if current}} active{{/if}}" role="presentation"><a href="{{url absolute="true"}}">{{label}}</a></li>
+			<li class="closing-menu-item nav-{{slug}}{{#if current}} active{{/if}}" role="presentation"><a href="{{url absolute="true"}}">{{label}}</a></li>
 			{{/foreach}}
 		</ul>
 	</div>
 	<div class="menu-footer">
 		<ul>
-			<li><a href="https://www.linkedin.com/in/debbabi-nader/" target="_blank" title="Linkedin"><i class="ic ic-linkedin"></i></a></li>
-			<li><a href="https://github.com/debbabi-nader/" target="_blank" title="GitHub"><i class="ic ic-github"></i></a></li>
-			<li><a href="javascript:void(0)" title="Email address"><i class="ic ic-mail"></i></a></li>
+			<li class="closing-menu-item"><a href="https://www.linkedin.com/in/debbabi-nader/" target="_blank" title="Linkedin"><i class="ic ic-linkedin"></i></a></li>
+			<li class="closing-menu-item"><a href="https://github.com/debbabi-nader/" target="_blank" title="GitHub"><i class="ic ic-github"></i></a></li>
+			<li><a id="copy-email-address" href="javascript:void(0)" title="Email address" data-clipboard-text="nader.debbabi.30@gmail.com"><i class="ic ic-mail"></i></a></li>
 		</ul>
 	</div>
 </nav>

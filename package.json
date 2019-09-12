@@ -2,7 +2,7 @@
     "name": "customized-attila",
     "description": "Customized Attila Ghost theme, based on the original Attila Ghost theme by Peter Amende which can be found at https://github.com/zutrinken/attila.git.",
     "demo": "https://debbabi-nader.github.io",
-    "version": "1.14.0",
+    "version": "2.0.0",
     "engines": {
         "ghost": ">=2.1.0",
         "ghost-api": "v2"

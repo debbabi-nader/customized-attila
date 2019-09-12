@@ -12,19 +12,7 @@ jQuery(function($) {
 		html.toggleClass('menu-active');
 	};
 
-	$('#menu').on({
-		'click': function() {
-			menu();
-		}
-	});
-
-	$('.menu-button').on({
-		'click': function() {
-			menu();
-		}
-	});
-
-	$('.hidden-close').on({
+	$('.menu-button, .hidden-close, .closing-menu-item').on({
 		'click': function() {
 			menu();
 		}
@@ -172,4 +160,15 @@ jQuery(function($) {
 			$(this).parent().addClass('activated');
 		});
 	}
+
+	/* ==========================================================================
+	   Clipboard
+	   ========================================================================== */
+	
+	var emailAddressClipboard = new ClipboardJS('#copy-email-address');
+	emailAddressClipboard.on('success', function(e) {
+		// console.log(e);
+		// $('#email-copy-tooltip').fadeIn(1000);
+		// $('#email-copy-tooltip').fadeOut(3000);
+	});
 });
