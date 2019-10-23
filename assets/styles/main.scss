@@ -1121,7 +1121,7 @@ img {
 }
 .post-share {
   position: relative;
-	max-width: 25%;
+	max-width: 32%;
 	float: right;
   display: flex;
 }
@@ -1152,6 +1152,9 @@ img {
 	width: auto;
 	height: auto;
 }
+.post-share .linkedin {
+	background-color: $color-social-linkedin;
+}
 .post-share .twitter {
 	background-color: $color-social-twitter;
 }
@@ -1160,7 +1163,7 @@ img {
 }
 .post-tags {
   position: relative;
-	max-width: 75%;
+	max-width: 68%;
 	float: left;
   display: flex;
   flex-wrap: wrap;

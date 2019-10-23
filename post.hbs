@@ -39,10 +39,13 @@
 
 				<div class="post-share">
 					<span class="post-info-label">{{t "Share:"}}</span>
-					<a class="twitter" href="https://twitter.com/share?text={{title}}&url={{url absolute="true"}}" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+					<a class="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url={{url absolute="true"}}&title={{title}}" onclick="window.open(this.href, 'linkedin-share', 'width=640,height=480');return false;">
+						<i class="ic ic-linkedin"></i><span class="hidden">Linkedin</span>
+					</a>
+					<a class="twitter" href="https://twitter.com/share?text={{title}}&url={{url absolute="true"}}" onclick="window.open(this.href, 'twitter-share', 'width=640,height=480');return false;">
 						<i class="ic ic-twitter"></i><span class="hidden">Twitter</span>
 					</a>
-					<a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+					<a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}" onclick="window.open(this.href, 'facebook-share','width=640,height=480');return false;">
 						<i class="ic ic-facebook"></i><span class="hidden">Facebook</span>
 					</a>
 				</div>
