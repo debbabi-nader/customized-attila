@@ -1565,6 +1565,43 @@ img {
 }
 
 /* ==========================================================================
+   Author Page
+   ========================================================================== */
+
+// .about-author {}
+
+.contact ul {
+	padding: 1em;
+	margin: 4em 0 0 0; 
+	text-align: center;
+}
+.contact li {
+	display: inline;
+}
+.contact li+li {
+	margin-left: 4em;
+}
+.contact li:before {
+	display: none;
+}
+.contact li a {
+	display: inline-block;
+	width: 2.5em;
+	line-height: 2.5em;
+	text-align: center;
+	border-radius: 50%;
+	color: $color-white;
+	background-color: $primary-color;
+}
+.contact li a:hover,
+.contact li a:focus {
+	background-color: $color-blue-15;
+}
+.contact li a i {
+	color: inherit;
+}
+
+/* ==========================================================================
    Media Queries - Smaller than 960px
    ========================================================================== */
 
